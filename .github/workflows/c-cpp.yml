@@ -13,5 +13,5 @@ jobs:
 
     steps:
     - name: checkout-bitbucket
-      run: git clone ${{https://bitbucket.org/energyconservatory/det/src/master/}}
+      run: git clone git@bitbucket.org:energyconservatory/det.git
 
