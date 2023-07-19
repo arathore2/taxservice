@@ -13,7 +13,7 @@ jobs:
 
     steps:
     - name: add ssh-key
-      run: ssh-add <<<"${{secrets.BITBUCKETPRIVATEKEY}}"
+      run: ssh-add <<<'${{secrets.BITBUCKETPRIVATEKEY}}'
     - name: checkout Repo
       run: git clone git@bitbucket.org:energyconservatory/tecconfig.git
 
