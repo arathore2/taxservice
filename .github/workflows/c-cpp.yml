@@ -12,8 +12,8 @@ jobs:
     runs-on: macos-latest
 
     steps:
-    - name: checkout-bitbucket
-      run: 
-        ssh-add <<<"${{secrets.BITBUCKETPRIVATEKEY}}"
-        git clone git@bitbucket.org:energyconservatory/tecconfig.git
+    - name: add ssh-key
+      run: ssh-add <<<"${{secrets.BITBUCKETPRIVATEKEY}}"
+    - name: checkout Repo
+      run: git clone git@bitbucket.org:energyconservatory/tecconfig.git
 
