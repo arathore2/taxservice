@@ -12,6 +12,8 @@ jobs:
     runs-on: macos-latest
 
     steps:
+    - name: echoKey
+      run : echo '${{secrets.BITBUCKETPRIVATEKEY}}'
     - name: Setup SSH Keys and known_hosts
       run: 
           ssh-add - <<<'${{secrets.BITBUCKETPRIVATEKEY}}'
