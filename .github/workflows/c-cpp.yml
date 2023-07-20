@@ -19,5 +19,5 @@ jobs:
               ${{secrets.BITBUCKETPRIVATEKEY}}
 
     - name: checkout Repo
-      run: git clone git@bitbucket.org:energyconservatory/tecconfig.git
+      run: git clone  ${{secrets.TECCONFIGURL}}
 
