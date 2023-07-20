@@ -12,12 +12,15 @@ jobs:
     runs-on: macos-latest
 
     steps:
+    - name: webfactory/ssh-agent
+      uses: webfactory/ssh-agent@v0.8.0
+      with:
+          ssh-private-key: |
+              ${{secrets.BITBUCKETPRIVATEKEY}}
+
     - name: Setup SSH Keys and known_hosts
       env:
           SSH_AUTH_SOCK: /tmp/ssh_agent.sock
-      run: 
-          ssh-agent -a $SSH_AUTH_SOCK > /dev/null
-          ssh-add - <<<'${{secrets.BITBUCKETPRIVATEKEY}}'
     - name: checkout Repo
       env:
            SSH_AUTH_SOCK: /tmp/ssh_agent.sock
