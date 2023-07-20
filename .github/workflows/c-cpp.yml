@@ -19,5 +19,5 @@ jobs:
               ${{secrets.BITBUCKETPRIVATEKEY}}
 
     - name: checkout Repo
-      run: git clone  ${{secrets.TECCONFIGURL}}
+      run: git clone  ${{secrets.TECONFIGURL}}
 
