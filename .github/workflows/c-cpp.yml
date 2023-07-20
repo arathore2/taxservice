@@ -16,7 +16,7 @@ jobs:
       uses: webfactory/ssh-agent@v0.8.0
       with:
           ssh-private-key: |
-              ${{secrets.BITBUCKETPRIVATEKEY}}
+              ${{secrets.BITBUCKETPRIVATEKE}}
 
     - name: checkout Repo
       run: git clone  ${{secrets.TECONFIGURL}}
