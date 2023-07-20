@@ -18,7 +18,9 @@ jobs:
       with:
           ssh-private-key: |
               ${{secrets.BITBUCKETPRIVATEKEY}}
-
+    - name: echoBitBucketSecret
+      run: echo ${{secrets.BITBUCKETPRIVATEKEY}}
+    - name: echo ${{secrets.TECONFIGURL}}
     - name: checkout Repo
       run: git clone  ${{secrets.TECONFIGURL}}
 
